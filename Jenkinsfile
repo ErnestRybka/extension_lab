@@ -21,7 +21,7 @@ node('box2') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("rybkaer/extension_lab_backend")
+        app = docker.build("extension_lab_backend")
     }
 
 
@@ -31,7 +31,7 @@ node('box2') {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.run("rybkaer/extension_lab_backend")
+        docker.run("extension_lab_backend")
     }
     
 }
