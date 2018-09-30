@@ -31,7 +31,7 @@ node('box2') {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        sudo.docker.run("extension_lab_backend")
+        docker.run("extension_lab_backend")
     }
     
 }
