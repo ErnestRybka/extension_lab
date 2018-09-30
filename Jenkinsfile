@@ -32,6 +32,6 @@ node('box2') {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         docker.run("rybkaer/extension_lab_backend")
-        }
     }
+    
 }
