@@ -23,7 +23,10 @@ node('box2'){
 
         app = docker.build("rybkaer/extension_lab_backend1")
     }
-
+    stage(stop/delite all containers){
+        docker.stop.all
+        docker.remove.all
+    }
 
 
     stage('run image') {
@@ -31,7 +34,7 @@ node('box2'){
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        sh "docker run -d -p 80:80 rybkaer/extension_lab_backend1"
+        docker.run("rybkaer/extension_lab_backend1")
     }
     
 }
