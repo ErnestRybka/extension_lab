@@ -8,7 +8,7 @@ node {
     }
 }
 
-node {
+node('box2'){
 
     stage('Clone repository on slave') {
         /* Let's make sure we have the repository cloned to our workspace */
