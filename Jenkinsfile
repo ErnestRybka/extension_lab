@@ -31,7 +31,7 @@ node('box2'){
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        sh "docker run -it -p 80:80 rybkaer/extension_lab_backend1"
+        sh "docker run -d -p 80:80 rybkaer/extension_lab_backend1"
     }
     
 }
