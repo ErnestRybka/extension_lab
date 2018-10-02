@@ -22,6 +22,7 @@ node('box2'){
          * docker build on the command line */
 
         app = docker.build("rybkaer/extension_lab_backend1")
+        app.push()
     }
     stage('stop/delite all containers'){
        sh "docker stop \$(docker ps -a -q) || true"
