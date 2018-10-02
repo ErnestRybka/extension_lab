@@ -25,6 +25,7 @@ node('box2'){
     }
     stage('stop/delite all containers'){
        sh "docker stop \$(docker ps -a -q) || true"
+       sh "docker rm \$(docker ps -a -q) || true"
     }
 
 
@@ -33,7 +34,7 @@ node('box2'){
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.run("rybkaer/extension_lab_backend1")
+        sh "docker run -d rybkaer/extension_lab_backend1"
     }
     
 }
