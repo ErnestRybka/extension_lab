@@ -24,7 +24,7 @@ node('box2'){
         app = docker.build("rybkaer/extension_lab_backend1")
     }
     stage('stop/delite all containers'){
-       sh "docker stop $(docker ps -a -q)" || true 
+       sh "docker stop \$(docker ps -a -q)" || true 
     }
 
 
